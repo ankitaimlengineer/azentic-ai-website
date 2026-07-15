@@ -60,7 +60,7 @@ export default function AboutSection() {
             className="relative h-[700px] w-full rounded-[60px] overflow-hidden border border-white/10 shadow-2xl shadow-[#6366F1]/10"
           >
             <Image 
-              src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?auto=format&fit=crop&q=80&w=1000" 
+              src="/images/Rocats.jpg" 
               alt="Neural Intelligence Visualization" 
               fill 
               className="object-cover brightness-75 hover:scale-105 transition-transform duration-1000"
