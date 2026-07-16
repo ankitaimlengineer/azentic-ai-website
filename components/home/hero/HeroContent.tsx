@@ -1,9 +1,12 @@
 "use client";
+import React, { useState } from "react"; // useState ઉમેર્યું
 import { motion, Variants } from "framer-motion";
 import { ArrowRight, PlayCircle, Sparkles } from "lucide-react";
+import VideoModal from "@/components/ui/VideoModal"; // મોડલ ઇમ્પોર્ટ કર્યું
 
 export default function HeroContent() {
-  // TypeScript Type 'Variants'
+  const [isVideoOpen, setIsVideoOpen] = useState(false); // મોડલ કંટ્રોલ કરવા માટે
+
   const fadeUp: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -40,7 +43,7 @@ export default function HeroContent() {
         Azentic AI builds autonomous agentic systems and neural architectures that transform how global enterprises scale intelligence.
       </motion.p>
 
-      {/* 4. Action Buttons (Updated with Links) */}
+      {/* 4. Action Buttons */}
       <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible" className="flex flex-wrap items-center gap-5">
         
         {/* Primary Button: Scrolls to Contact */}
@@ -53,15 +56,23 @@ export default function HeroContent() {
           </button>
         </a>
 
-        {/* Secondary Button: Could be a YouTube Demo or Portfolio */}
-        <a href="#portfolio">
-          <button className="flex items-center gap-3 px-8 py-5 bg-white/5 border border-white/10 text-white rounded-full font-bold text-sm transition-all hover:bg-white/10 hover:border-white/20 backdrop-blur-sm">
-            <PlayCircle size={20} className="text-zinc-400" /> Watch Demo
-          </button>
-        </a>
+        {/* Watch Demo Button: Opens Video Modal */}
+        <button 
+          onClick={() => setIsVideoOpen(true)} // ક્લિક પર મોડલ ખુલશે
+          className="flex items-center gap-3 px-8 py-5 bg-white/5 border border-white/10 text-white rounded-full font-bold text-sm transition-all hover:bg-white/10 hover:border-white/20 backdrop-blur-sm"
+        >
+          <PlayCircle size={20} className="text-[#6366F1]" /> Watch Demo
+        </button>
       </motion.div>
 
-      {/* 5. Mini Stats (Trust Factor) */}
+      {/* 5. The Video Modal Component */}
+      <VideoModal 
+        isOpen={isVideoOpen} 
+        onClose={() => setIsVideoOpen(false)} 
+        videoSrc="/videos/demo.mp4" // ખાતરી કરજો કે વિડિયો આ પાથ પર છે
+      />
+
+      {/* 6. Mini Stats */}
       <motion.div 
         custom={4} variants={fadeUp} initial="hidden" animate="visible"
         className="flex items-center gap-8 mt-4 pt-10 border-t border-white/5"
