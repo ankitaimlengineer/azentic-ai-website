@@ -61,7 +61,7 @@ export default function Contact() {
                 <div className="p-3 bg-white/5 rounded-xl text-[#6366F1]"><Phone size={20} /></div>
                 <div>
                   <p className="text-[10px] text-zinc-500 font-bold uppercase">Call us</p>
-                  <p className="text-white font-medium">+91 8320390508</p>
+                  <p className="text-white font-medium">-------------</p>
                 </div>
               </div>
             </div>

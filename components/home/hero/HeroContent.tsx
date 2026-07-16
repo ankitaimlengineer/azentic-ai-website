@@ -3,7 +3,7 @@ import { motion, Variants } from "framer-motion";
 import { ArrowRight, PlayCircle, Sparkles } from "lucide-react";
 
 export default function HeroContent() {
-  // TypeScript Type 'Variants' ઉમેર્યું છે જેથી એરર ના આવે
+  // TypeScript Type 'Variants'
   const fadeUp: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -15,7 +15,7 @@ export default function HeroContent() {
 
   return (
     <div className="flex flex-col gap-10 relative z-10">
-      {/* 1. Badge */}
+      {/* 1. Sleek Badge */}
       <motion.div 
         custom={0} variants={fadeUp} initial="hidden" animate="visible"
         className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#6366F1]/20 bg-[#6366F1]/5 w-fit backdrop-blur-md"
@@ -24,9 +24,9 @@ export default function HeroContent() {
         <span className="text-[10px] text-[#6366F1] font-bold uppercase tracking-[0.2em]">Architecting Future Intelligence</span>
       </motion.div>
 
-      {/* 2. Heading */}
+      {/* 2. Grand Heading */}
       <motion.div custom={1} variants={fadeUp} initial="hidden" animate="visible">
-        <h1 className="text-6xl lg:text-8xl font-bold tracking-tighter text-white leading-[0.95] mb-4">
+        <h1 className="text-6xl lg:text-8xl font-black tracking-tighter text-white leading-[0.95] mb-4">
           Human Mind. <br />
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#6366F1] via-cyan-400 to-[#8B5CF6]">Machine Precision.</span>
         </h1>
@@ -35,31 +35,51 @@ export default function HeroContent() {
       {/* 3. Description */}
       <motion.p 
         custom={2} variants={fadeUp} initial="hidden" animate="visible"
-        className="text-lg lg:text-xl text-zinc-400 max-w-xl leading-relaxed"
+        className="text-lg lg:text-xl text-zinc-400 max-w-xl leading-relaxed font-light"
       >
-        Azentic AI builds autonomous agentic systems and neural architectures for the next generation of global computing.
+        Azentic AI builds autonomous agentic systems and neural architectures that transform how global enterprises scale intelligence.
       </motion.p>
 
-      {/* 4. Action Buttons */}
+      {/* 4. Action Buttons (Updated with Links) */}
       <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible" className="flex flex-wrap items-center gap-5">
-        <button className="group relative px-8 py-4 bg-white text-black rounded-full font-bold text-sm overflow-hidden transition-all hover:scale-105">
-           <span className="relative z-10 flex items-center gap-2">Start Project <ArrowRight size={16} /></span>
-        </button>
-        <button className="flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 text-white rounded-full font-bold text-sm transition-all hover:bg-white/10">
-          <PlayCircle size={20} /> Watch Demo
-        </button>
+        
+        {/* Primary Button: Scrolls to Contact */}
+        <a href="#contact" className="group relative">
+          <button className="relative px-10 py-5 bg-white text-black rounded-full font-black text-sm overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(255,255,255,0.15)]">
+             <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-black/5 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+             <span className="relative z-10 flex items-center gap-2">
+               Start Your Project <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+             </span>
+          </button>
+        </a>
+
+        {/* Secondary Button: Could be a YouTube Demo or Portfolio */}
+        <a href="#portfolio">
+          <button className="flex items-center gap-3 px-8 py-5 bg-white/5 border border-white/10 text-white rounded-full font-bold text-sm transition-all hover:bg-white/10 hover:border-white/20 backdrop-blur-sm">
+            <PlayCircle size={20} className="text-zinc-400" /> Watch Demo
+          </button>
+        </a>
       </motion.div>
 
-      {/* 5. Stats */}
+      {/* 5. Mini Stats (Trust Factor) */}
       <motion.div 
         custom={4} variants={fadeUp} initial="hidden" animate="visible"
-        className="flex items-center gap-8 mt-4 pt-8 border-t border-white/5"
+        className="flex items-center gap-8 mt-4 pt-10 border-t border-white/5"
       >
-        <div><p className="text-2xl font-bold text-white">99.9%</p><p className="text-[10px] text-zinc-500 uppercase font-bold">Reliability</p></div>
+        <div className="group cursor-default">
+          <p className="text-3xl font-black text-white group-hover:text-[#6366F1] transition-colors">99.9%</p>
+          <p className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Reliability</p>
+        </div>
         <div className="w-px h-10 bg-white/10" />
-        <div><p className="text-2xl font-bold text-white">250ms</p><p className="text-[10px] text-zinc-500 uppercase font-bold">Latency</p></div>
+        <div className="group cursor-default">
+          <p className="text-3xl font-black text-white group-hover:text-[#6366F1] transition-colors">250ms</p>
+          <p className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Latency</p>
+        </div>
         <div className="w-px h-10 bg-white/10" />
-        <div><p className="text-2xl font-bold text-white">10x</p><p className="text-[10px] text-zinc-500 uppercase font-bold">Efficiency</p></div>
+        <div className="group cursor-default">
+          <p className="text-3xl font-black text-white group-hover:text-[#6366F1] transition-colors">10x</p>
+          <p className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Efficiency</p>
+        </div>
       </motion.div>
     </div>
   );
