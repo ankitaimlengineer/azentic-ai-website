@@ -35,8 +35,8 @@ export default function PreLoader() {
               <Image 
                 src="/Azentic-Final-Brand.png" // ખાતરી કરજો કે પબ્લિક ફોલ્ડરમાં આ જ નામ છે
                 alt="Azentic AI Logo" 
-                width={80} // સાઈઝ તારી જરૂરત મુજબ બદલી શકે છે
-                height={80} 
+                width={100} // સાઈઝ તારી જરૂરત મુજબ બદલી શકે છે
+                height={100} 
                 className="relative z-10"
                 priority
               />
