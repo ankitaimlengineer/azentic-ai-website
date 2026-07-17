@@ -1,12 +1,9 @@
 "use client";
-import React, { useState } from "react"; // useState ઉમેર્યું
 import { motion, Variants } from "framer-motion";
 import { ArrowRight, PlayCircle, Sparkles } from "lucide-react";
-import VideoModal from "@/components/ui/VideoModal"; // મોડલ ઇમ્પોર્ટ કર્યું
 
 export default function HeroContent() {
-  const [isVideoOpen, setIsVideoOpen] = useState(false); // મોડલ કંટ્રોલ કરવા માટે
-
+  // એનિમેશન વેરિયન્ટ્સ
   const fadeUp: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -43,10 +40,10 @@ export default function HeroContent() {
         Azentic AI builds autonomous agentic systems and neural architectures that transform how global enterprises scale intelligence.
       </motion.p>
 
-      {/* 4. Action Buttons */}
+      {/* 4. Action Buttons - લિંક્સ અપડેટ કરી છે */}
       <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible" className="flex flex-wrap items-center gap-5">
         
-        {/* Primary Button: Scrolls to Contact */}
+        {/* Primary Button: સીધું Contact Form પર જશે */}
         <a href="#contact" className="group relative">
           <button className="relative px-10 py-5 bg-white text-black rounded-full font-black text-sm overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(255,255,255,0.15)]">
              <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-black/5 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
@@ -56,23 +53,15 @@ export default function HeroContent() {
           </button>
         </a>
 
-        {/* Watch Demo Button: Opens Video Modal */}
-        <button 
-          onClick={() => setIsVideoOpen(true)} // ક્લિક પર મોડલ ખુલશે
-          className="flex items-center gap-3 px-8 py-5 bg-white/5 border border-white/10 text-white rounded-full font-bold text-sm transition-all hover:bg-white/10 hover:border-white/20 backdrop-blur-sm"
-        >
-          <PlayCircle size={20} className="text-[#6366F1]" /> Watch Demo
-        </button>
+        {/* Watch Demo Button: હવે આ સીધું Portfolio સેક્શન પર જશે */}
+        <a href="#portfolio">
+          <button className="flex items-center gap-3 px-8 py-5 bg-white/5 border border-white/10 text-white rounded-full font-bold text-sm transition-all hover:bg-white/10 hover:border-white/20 backdrop-blur-sm">
+            <PlayCircle size={20} className="text-[#6366F1]" /> Watch Demo
+          </button>
+        </a>
       </motion.div>
 
-      {/* 5. The Video Modal Component */}
-      <VideoModal 
-        isOpen={isVideoOpen} 
-        onClose={() => setIsVideoOpen(false)} 
-        videoSrc="/videos/demo.mp4" // ખાતરી કરજો કે વિડિયો આ પાથ પર છે
-      />
-
-      {/* 6. Mini Stats */}
+      {/* 5. Mini Stats (Trust Factors) */}
       <motion.div 
         custom={4} variants={fadeUp} initial="hidden" animate="visible"
         className="flex items-center gap-8 mt-4 pt-10 border-t border-white/5"
