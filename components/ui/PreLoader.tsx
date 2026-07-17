@@ -33,7 +33,7 @@ export default function PreLoader() {
               <div className="absolute inset-0 bg-[#6366F1]/20 blur-2xl rounded-full" />
               
               <Image 
-                src="/Azentic-Final-Brand.png" // ખાતરી કરજો કે પબ્લિક ફોલ્ડરમાં આ જ નામ છે
+                src="/Azentic-Final-Brand1.png" // ખાતરી કરજો કે પબ્લિક ફોલ્ડરમાં આ જ નામ છે
                 alt="Azentic AI Logo" 
                 width={150} // સાઈઝ તારી જરૂરત મુજબ બદલી શકે છે
                 height={150} 
