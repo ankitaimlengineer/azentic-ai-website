@@ -29,8 +29,7 @@ export default function PreLoader() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="relative mb-8" // લખાણ અને લોગો વચ્ચે જગ્યા
             >
-              {/* લોગોની પાછળ હળવો ગ્લો ઇફેક્ટ */}
-              <div className="absolute inset-0 bg-[#6366F1]/20 blur-2xl rounded-full" />
+          
               
               <Image 
                 src="/Azentic-Final-Brand1.png" // ખાતરી કરજો કે પબ્લિક ફોલ્ડરમાં આ જ નામ છે

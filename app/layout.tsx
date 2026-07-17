@@ -18,8 +18,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Azentic AI | Architecting Autonomous Intelligence",
   description: "Global leaders in neural architectures and enterprise AI solutions.",
-  icons: {
-    icon: "/icon1.png", // આ લાઈન ખાસ ચેક કરી લેજો
+   icons: {
+    icon: [
+      { url: "/icon1.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon1.png", sizes: "144x144", type: "image/png" }, // આ ગૂગલ માટે છે
+      { url: "/icon1.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/icon1.png", // એપલના ફોન માટે
   },
 };
 
