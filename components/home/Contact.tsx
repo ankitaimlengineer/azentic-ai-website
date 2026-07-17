@@ -84,7 +84,7 @@ export default function Contact() {
                 <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-20">
                   <CheckCircle2 size={70} className="text-green-500 mx-auto mb-6 animate-pulse" />
                   <h3 className="text-3xl font-bold text-white mb-3">Transmission Received.</h3>
-                  <p className="text-zinc-400">Our team will respond to hello@azentic.in within 24 hours.</p>
+                  <p className="text-zinc-400">Our team will review your inquiry and respond to your email within 24 hours.</p>
                   <button onClick={() => setStatus("idle")} className="mt-10 px-8 py-3 bg-white/5 border border-white/10 rounded-full text-zinc-400 text-xs font-bold uppercase tracking-widest hover:text-white transition-all">Send another inquiry</button>
                 </motion.div>
               ) : (

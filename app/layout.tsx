@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Azentic AI | Architecting Autonomous Intelligence",
   description: "Global leaders in neural architectures and enterprise AI solutions.",
+  icons: {
+    icon: "/icon.png", // આ લાઈન ખાસ ચેક કરી લેજો
+  },
 };
 
 export default function RootLayout({
