@@ -35,7 +35,207 @@ const projects = [
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000",
     github: "#",
     demo: "#"
-  }
+  },
+  {
+  title: "Enterprise AI Copilot",
+  tag: "Coming Soon",
+  desc: "A secure enterprise AI copilot that assists employees with document search, email drafting, meeting summaries, knowledge retrieval, workflow automation, and intelligent decision support.",
+  image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Enterprise Knowledge Intelligence Platform",
+  tag: "Coming Soon",
+  desc: "An enterprise knowledge platform powered by RAG, vector databases, and LLMs to deliver accurate answers across documents, policies, manuals, and internal business knowledge.",
+  image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Autonomous Business Operations Platform",
+  tag: "Coming Soon",
+  desc: "A next-generation AI platform that automates end-to-end business operations using intelligent agents, workflow orchestration, and autonomous decision making.",
+  image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Multi-Agent Enterprise Intelligence",
+  tag: "Coming Soon",
+  desc: "A collaborative AI agent ecosystem where HR, Finance, Sales, Marketing, and Operations agents work together to automate enterprise processes.",
+  image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "AI Customer Experience Platform",
+  tag: "Coming Soon",
+  desc: "An omnichannel AI platform delivering intelligent customer support across chat, voice, email, WhatsApp, and social media with personalized experiences.",
+  image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Executive Decision Intelligence",
+  tag: "Coming Soon",
+  desc: "An AI-powered executive dashboard providing predictive analytics, strategic insights, KPI monitoring, and real-time business intelligence.",
+  image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Intelligent Document Processing",
+  tag: "Coming Soon",
+  desc: "An enterprise document intelligence solution that extracts, classifies, validates, and analyzes contracts, invoices, forms, and business documents.",
+  image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Enterprise Workflow Automation",
+  tag: "Coming Soon",
+  desc: "A low-code AI workflow platform that automates approvals, tasks, notifications, and enterprise business processes with intelligent orchestration.",
+  image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "AI Financial Intelligence Suite",
+  tag: "Coming Soon",
+  desc: "A financial AI platform offering forecasting, budgeting, cash flow analysis, anomaly detection, and automated financial reporting.",
+  image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Enterprise Fraud Detection System",
+  tag: "Coming Soon",
+  desc: "A machine learning platform that detects fraud, suspicious activities, and financial risks in real time using predictive intelligence.",
+  image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "AI Cyber Defense Center",
+  tag: "Coming Soon",
+  desc: "An AI-driven cybersecurity platform providing threat detection, incident response, security monitoring, and predictive risk analysis.",
+  image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Enterprise Identity Intelligence",
+  tag: "Coming Soon",
+  desc: "A smart identity management platform for authentication, access governance, behavioral analytics, and enterprise security.",
+  image: "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Supply Chain Intelligence Platform",
+  tag: "Coming Soon",
+  desc: "An AI platform optimizing procurement, logistics, inventory, warehouse management, and demand forecasting for global enterprises.",
+  image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Smart Manufacturing Intelligence",
+  tag: "Coming Soon",
+  desc: "An Industry 4.0 platform that enables predictive maintenance, quality inspection, production optimization, and factory intelligence.",
+  image: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Healthcare Intelligence Platform",
+  tag: "Coming Soon",
+  desc: "A secure AI platform for hospitals featuring clinical assistance, medical document analysis, patient support, and healthcare automation.",
+  image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Banking Intelligence Platform",
+  tag: "Coming Soon",
+  desc: "A banking AI solution providing fraud prevention, customer insights, credit risk assessment, compliance monitoring, and intelligent automation.",
+  image: "https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Legal Intelligence Platform",
+  tag: "Coming Soon",
+  desc: "An enterprise legal AI solution for contract review, compliance analysis, legal research, document drafting, and risk management.",
+  image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Enterprise HR Intelligence",
+  tag: "Coming Soon",
+  desc: "A comprehensive HR platform for talent acquisition, resume screening, workforce analytics, onboarding, and employee engagement.",
+  image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "AI Research Intelligence Platform",
+  tag: "Coming Soon",
+  desc: "An AI research platform that performs deep web research, market analysis, competitive intelligence, and automated report generation.",
+  image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Enterprise Data Intelligence Cloud",
+  tag: "Coming Soon",
+  desc: "A unified AI platform for enterprise data integration, analytics, visualization, predictive modeling, and intelligent insights.",
+  image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Smart City Intelligence Platform",
+  tag: "Coming Soon",
+  desc: "A smart city platform using AI for traffic management, public safety, energy optimization, and urban infrastructure monitoring.",
+  image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Retail Intelligence Platform",
+  tag: "Coming Soon",
+  desc: "An AI retail solution providing demand forecasting, personalized recommendations, customer analytics, and inventory optimization.",
+  image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "AI Voice Agent Platform",
+  tag: "Coming Soon",
+  desc: "A human-like conversational voice AI platform capable of handling customer calls, bookings, support, and enterprise communication.",
+  image: "https://images.unsplash.com/photo-1516321310764-8d4f0d5b1d57?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Enterprise API Integration Hub",
+  tag: "Coming Soon",
+  desc: "A centralized platform connecting enterprise applications, AI services, databases, CRMs, ERPs, and third-party APIs securely.",
+  image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+},
+{
+  title: "Azentic AI Nexus Platform",
+  tag: "Coming Soon",
+  desc: "The flagship enterprise AI ecosystem combining copilots, autonomous agents, workflow automation, knowledge intelligence, analytics, voice AI, and enterprise security into one unified platform.",
+  image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1000&q=80",
+  github: "#",
+  demo: "#"
+}
 ];
 
 export default function Portfolio() {
