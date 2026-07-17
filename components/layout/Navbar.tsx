@@ -36,7 +36,7 @@ export default function Navbar() {
           <div className="relative">
             <div className="absolute inset-0 bg-[#6366F1]/20 blur-xl rounded-full group-hover:bg-[#6366F1]/40 transition-all" />
             <Image 
-              src="/Azentic-Final-Brand.png" 
+              src="/Azentic-Final-Brand1.png" 
               alt="Azentic" 
               width={48} // સાઈઝ વધારી છે
               height={48} 

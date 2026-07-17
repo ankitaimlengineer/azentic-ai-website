@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 mb-20">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-8">
-              <Image src="/Azentic-Final-Brand.png" alt="Azentic" width={55} height={55} />
+              <Image src="/Azentic-Final-Brand1.png" alt="Azentic" width={55} height={55} />
               <span className="text-xl font-bold text-white tracking-tighter uppercase">AZENTIC <span className="text-[#6366F1]">AI</span></span>
             </div>
             <p className="text-zinc-500 max-w-sm text-sm mb-8 leading-relaxed">
