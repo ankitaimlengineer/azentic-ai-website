@@ -1,6 +1,6 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const GithubIcon = () => (
@@ -239,38 +239,98 @@ const projects = [
 ];
 
 export default function Portfolio() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 6; // એક પેજ પર કેટલા પ્રોજેક્ટ બતાવવા છે
+
+  // Logic to calculate projects for current page
+  const indexOfLastProject = currentPage * projectsPerPage;
+  const indexOfFirstProject = indexOfLastProject - projectsPerPage;
+  const currentProjects = projects.slice(indexOfFirstProject, indexOfLastProject);
+  const totalPages = Math.ceil(projects.length / projectsPerPage);
+
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    // પેજ બદલાય એટલે આપોઆપ પોર્ટફોલિયોના ટોપ પર સ્ક્રોલ થાય
+    document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section id="portfolio" className="py-32 bg-[#030712]">
       <div className="container mx-auto max-w-7xl px-6">
-        <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-20">Neural <span className="text-zinc-500">Repositories.</span></h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((p, i) => (
-            <motion.div key={i} whileHover={{ y: -10 }} className="group relative h-[550px] rounded-[48px] overflow-hidden border border-white/5 bg-white/[0.02]">
-              <Image src={p.image} alt={p.title} fill className="object-cover opacity-40 group-hover:opacity-30 transition-transform duration-1000 group-hover:scale-110" />
-              <div className="absolute inset-0 p-10 flex flex-col justify-between z-10">
-                <div className="flex justify-between items-start">
-                  <div className="p-4 bg-black/50 rounded-2xl text-white"><GithubIcon /></div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-white/60 bg-white/5 px-4 py-2 rounded-full border border-white/10">{p.tag}</span>
+        <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-20">
+          Neural <span className="text-zinc-500">Repositories.</span>
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[600px]">
+          <AnimatePresence mode="wait">
+            {currentProjects.map((p, i) => (
+              <motion.div 
+                key={`${currentPage}-${i}`} 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3, delay: i * 0.05 }}
+                whileHover={{ y: -10 }} 
+                className="group relative h-[550px] rounded-[48px] overflow-hidden border border-white/5 bg-white/[0.02]"
+              >
+                <Image src={p.image} alt={p.title} fill className="object-cover opacity-40 group-hover:opacity-30 transition-transform duration-1000 group-hover:scale-110" />
+                <div className="absolute inset-0 p-10 flex flex-col justify-between z-10">
+                  <div className="flex justify-between items-start">
+                    <div className="p-4 bg-black/50 rounded-2xl text-white"><GithubIcon /></div>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-white/60 bg-white/5 px-4 py-2 rounded-full border border-white/10">{p.tag}</span>
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-black text-white mb-4">{p.title}</h3>
+                    <p className="text-zinc-400 text-sm font-light mb-8 line-clamp-3">{p.desc}</p>
+                    
+                    {p.tag !== "Coming Soon" && (
+                      <div className="flex items-center gap-3">
+                        <a href={p.github} target="_blank" className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-white text-black rounded-2xl font-bold text-xs hover:bg-[#6366F1] hover:text-white transition-all">
+                          <GithubIcon /> Code
+                        </a>
+                        <a href={p.demo} target="_blank" className="p-3 bg-white/5 border border-white/10 rounded-2xl text-white hover:bg-white/10">
+                          <ExternalIcon />
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-3xl font-black text-white mb-4">{p.title}</h3>
-                  <p className="text-zinc-400 text-sm font-light mb-8 line-clamp-3">{p.desc}</p>
-                  
-                  {/* શરત: જો Coming Soon હોય તો બટન્સ ના બતાવો */}
-                  {p.tag !== "Coming Soon" && (
-                    <div className="flex items-center gap-3">
-                      <a href={p.github} target="_blank" className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-white text-black rounded-2xl font-bold text-xs hover:bg-[#6366F1] hover:text-white transition-all">
-                        <GithubIcon /> Code
-                      </a>
-                      <a href={p.demo} target="_blank" className="p-3 bg-white/5 border border-white/10 rounded-2xl text-white hover:bg-white/10">
-                        <ExternalIcon />
-                      </a>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
+
+        {/* Pagination UI - તમારી ઈમેજ જેવું જ લોજીક */}
+        <div className="mt-24 flex justify-center items-center gap-2 md:gap-4">
+          <div className="flex items-center bg-white/5 px-6 py-4 rounded-full border border-white/10 backdrop-blur-md">
+            {/* પેજ નંબર્સ */}
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((number) => (
+              <button
+                key={number}
+                onClick={() => handlePageChange(number)}
+                className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 text-sm font-bold ${
+                  currentPage === number 
+                  ? "bg-white text-black scale-110 shadow-[0_0_20px_rgba(255,255,255,0.3)]" 
+                  : "text-white/40 hover:text-white"
+                }`}
+              >
+                {number}
+              </button>
+            ))}
+
+            {/* Next બટન */}
+            {currentPage < totalPages && (
+              <button 
+                onClick={() => handlePageChange(currentPage + 1)}
+                className="flex items-center gap-2 ml-6 text-white font-black uppercase text-[10px] tracking-widest hover:text-zinc-400 transition-all group"
+              >
+                Next 
+                <svg className="group-hover:translate-x-1 transition-transform" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </section>
