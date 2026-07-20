@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+// Footer અહીંથી કાઢી નાખ્યું છે કારણ કે તે layout.tsx માંથી આવશે
 import Hero from "@/components/home/hero/Hero";
 import BrandLogos from "@/components/home/BrandLogos"; 
 
@@ -14,14 +13,12 @@ import AISolutions from "@/components/home/AISolutions";
 import Portfolio from "@/components/home/Portfolio";
 import FAQ from "@/components/home/FAQ";
 import LatestNews from "@/components/home/LatestNews";
-import Pricing from "@/components/home/Pricing"; // નવું ઉમેર્યું
-import Contact from "@/components/home/Contact"; // નવું ઉમેર્યું
+import Pricing from "@/components/home/Pricing"; 
+import Contact from "@/components/home/Contact"; 
 
 export default function Home() {
   return (
     <main className="bg-[#030712] min-h-screen overflow-x-hidden">
-      <Navbar />
-      
       {/* ૧. Home Section */}
       <section id="home">
         <Hero />
@@ -30,7 +27,9 @@ export default function Home() {
       <BrandLogos /> 
 
       <div className="space-y-0">
-        <Mission />
+        <div className="py-20">
+           <Mission />
+        </div>
         <Process />
 
         {/* ૨. About Section */}
@@ -51,7 +50,7 @@ export default function Home() {
           <Portfolio />
         </section>
 
-        {/* ૫. Pricing Section (નવું) */}
+        {/* ૫. Pricing Section */}
         <section id="pricing" className="scroll-mt-20">
           <Pricing />
         </section>
@@ -59,13 +58,13 @@ export default function Home() {
         <FAQ />
         <LatestNews />
 
-        {/* ૬. Contact Section (નવું - હવે પ્રોફેશનલ ફોર્મ સાથે) */}
+        {/* ૬. Contact Section */}
         <section id="contact" className="scroll-mt-20">
           <Contact />
         </section>
       </div>
 
-      <Footer />
+      {/* Footer અહીંથી કાઢી નાખ્યો છે - હવે તે ડબલ નહીં દેખાય */}
     </main>
   );
 }

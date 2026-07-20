@@ -1,6 +1,7 @@
 "use client";
 import { motion, Variants } from "framer-motion";
 import { ArrowRight, PlayCircle, Sparkles } from "lucide-react";
+import Link from "next/link"; // Next.js Link ઈમ્પોર્ટ કર્યું
 
 export default function HeroContent() {
   // એનિમેશન વેરિયન્ટ્સ
@@ -40,28 +41,26 @@ export default function HeroContent() {
         Azentic AI builds autonomous agentic systems and neural architectures that transform how global enterprises scale intelligence.
       </motion.p>
 
-      {/* 4. Action Buttons - લિંક્સ અપડેટ કરી છે */}
+      {/* 4. Action Buttons */}
       <motion.div custom={3} variants={fadeUp} initial="hidden" animate="visible" className="flex flex-wrap items-center gap-5">
         
-        {/* Primary Button: સીધું Contact Form પર જશે */}
-        <a href="#contact" className="group relative">
-          <button className="relative px-10 py-5 bg-white text-black rounded-full font-black text-sm overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(255,255,255,0.15)]">
+        {/* Primary Button: હવે સીધું /contact પેજ પર જશે */}
+        <Link href="/contact" className="group relative block">
+          <div className="px-10 py-5 bg-white text-black rounded-full font-black text-sm overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(255,255,255,0.15)] flex items-center gap-2 relative">
              <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-black/5 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
              <span className="relative z-10 flex items-center gap-2">
                Start Your Project <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
              </span>
-          </button>
-        </a>
+          </div>
+        </Link>
 
-        {/* Watch Demo Button: હવે આ સીધું Portfolio સેક્શન પર જશે */}
-        <a href="#portfolio">
-          <button className="flex items-center gap-3 px-8 py-5 bg-white/5 border border-white/10 text-white rounded-full font-bold text-sm transition-all hover:bg-white/10 hover:border-white/20 backdrop-blur-sm">
-            <PlayCircle size={20} className="text-[#6366F1]" /> Watch Demo
-          </button>
-        </a>
+        {/* Watch Demo Button: હવે આ હોમપેજના Portfolio સેક્શન પર જશે */}
+        <Link href="/#portfolio" className="flex items-center gap-3 px-8 py-5 bg-white/5 border border-white/10 text-white rounded-full font-bold text-sm transition-all hover:bg-white/10 hover:border-white/20 backdrop-blur-sm">
+          <PlayCircle size={20} className="text-[#6366F1]" /> View Case Studies
+        </Link>
       </motion.div>
 
-      {/* 5. Mini Stats (Trust Factors) */}
+      {/* 5. Mini Stats */}
       <motion.div 
         custom={4} variants={fadeUp} initial="hidden" animate="visible"
         className="flex items-center gap-8 mt-4 pt-10 border-t border-white/5"

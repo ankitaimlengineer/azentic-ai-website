@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
-import { Check, Sparkles } from "lucide-react";
+import { Check, Sparkles, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link"; // Next.js Link ઈમ્પોર્ટ કર્યું
 
 const plans = [
   { 
@@ -65,8 +66,8 @@ export default function Pricing() {
             whileHover={{ y: -12 }}
             className={`p-12 rounded-[56px] border ${
               plan.highlight 
-              ? "border-[#6366F1] bg-[#6366F1]/5 shadow-[0_0_60px_rgba(99,102,241,0.15)]" 
-              : "border-white/5 bg-white/[0.02]"
+              ? "border-[#6366F1] bg-white/[0.03] shadow-[0_0_60px_rgba(99,102,241,0.1)]" 
+              : "border-white/5 bg-white/[0.01]"
             } relative overflow-hidden group transition-all duration-500 flex flex-col h-full backdrop-blur-sm`}
           >
             {/* Most Popular Badge */}
@@ -76,7 +77,7 @@ export default function Pricing() {
               </div>
             )}
 
-            <div className="mb-10">
+            <div className="mb-10 text-left">
               <h4 className="text-xl font-bold text-white mb-3 tracking-tight">{plan.name}</h4>
               <div className="flex items-baseline gap-1 mb-4">
                 <span className="text-5xl font-black text-white tracking-tighter">{plan.price}</span>
@@ -98,20 +99,23 @@ export default function Pricing() {
               </ul>
             </div>
 
-            {/* બટન જે સીધું Contact Section પર લઈ જશે */}
-            <a href="#contact" className="block w-full">
-              <button className={`w-full py-5 rounded-[24px] font-black text-sm transition-all duration-500 active:scale-95 overflow-hidden relative group/btn ${
+            {/* FIX: હવે આ લિંક સીધી તમારા મેઈન Inquiry System (#contact) પર જશે */}
+            <Link 
+              href="/#contact" 
+              className={`w-full py-5 rounded-[24px] font-black text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-2 transition-all duration-500 active:scale-95 overflow-hidden relative group/btn ${
                 plan.highlight 
-                ? "bg-white text-black shadow-[0_0_30px_rgba(255,255,255,0.2)]" 
+                ? "bg-white text-black hover:bg-[#6366F1] hover:text-white shadow-2xl" 
                 : "bg-white/5 text-white border border-white/10 hover:bg-white/10"
-              }`}>
-                {/* Shimmer effect for highlighted button */}
-                {plan.highlight && (
-                  <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-black/5 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]" />
-                )}
-                <span className="relative z-10">{plan.buttonText}</span>
-              </button>
-            </a>
+              }`}
+            >
+              {/* Shimmer effect only for highlighted button */}
+              {plan.highlight && (
+                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-black/10 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]" />
+              )}
+              <span className="relative z-10 flex items-center gap-2">
+                {plan.buttonText} <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
+              </span>
+            </Link>
 
             {/* Subtle Gradient Glow inside cards on hover */}
             <div className="absolute -bottom-20 -right-20 w-48 h-48 bg-[#6366F1]/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
