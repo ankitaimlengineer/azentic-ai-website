@@ -87,7 +87,7 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          {/* MEGA MENU 2: SERVICES (તમારા લિસ્ટ મુજબ) */}
+          {/* MEGA MENU 2: SERVICES */}
           <div className="relative py-2" onMouseEnter={() => setActiveMenu("services")} onMouseLeave={() => setActiveMenu(null)}>
             <button className="flex items-center gap-1 text-[11px] font-bold text-zinc-400 group-hover:text-white transition-all tracking-widest outline-none uppercase cursor-default">
               Services <ChevronDown size={12} className={`transition-transform duration-300 ${activeMenu === "services" ? "rotate-180" : ""}`} />
@@ -162,7 +162,7 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          {/* MEGA MENU 4: INDUSTRIES (નવા સ્ક્રીનશોટ મુજબ) */}
+          {/* MEGA MENU 4: INDUSTRIES */}
           <div className="relative py-2" onMouseEnter={() => setActiveMenu("industries")} onMouseLeave={() => setActiveMenu(null)}>
             <button className="flex items-center gap-1 text-[11px] font-bold text-zinc-400 group-hover:text-white transition-all tracking-widest outline-none uppercase cursor-default">
               Industries <ChevronDown size={12} className={`transition-transform duration-300 ${activeMenu === "industries" ? "rotate-180" : ""}`} />
@@ -170,7 +170,6 @@ export default function Navbar() {
             <AnimatePresence>
               {activeMenu === "industries" && (
                 <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 15 }} className="absolute top-full left-[-600px] mt-4 w-[1250px] bg-[#0A0B10] border border-white/10 p-10 rounded-[40px] shadow-2xl grid grid-cols-12 gap-10">
-                  {/* Left & Center: INDUSTRIES (2 Cols) */}
                   <div className="col-span-8 grid grid-cols-2 gap-x-12">
                     <div className="space-y-1">
                       <p className="text-[10px] font-black tracking-[0.25em] text-zinc-600 mb-6 uppercase">Industries</p>
@@ -186,7 +185,6 @@ export default function Navbar() {
                       <MenuLink href="/industries/game-dev" icon={<Gamepad2 size={16}/>} title="Game Development" desc="AI-accelerated production pipelines" />
                     </div>
                   </div>
-                  {/* Right Column: DEPARTMENTS */}
                   <div className="col-span-4 border-l border-white/5 pl-10">
                     <p className="text-[10px] font-black tracking-[0.25em] text-zinc-600 mb-6 uppercase">Departments</p>
                     <div className="grid gap-1">
@@ -202,6 +200,10 @@ export default function Navbar() {
           </div>
 
           <Link href="/#portfolio" className="text-[11px] font-bold text-zinc-400 hover:text-white transition-all tracking-widest uppercase">Portfolio</Link>
+          
+          {/* Added About Us link here */}
+          <Link href="/about" className="text-[11px] font-bold text-zinc-400 hover:text-white transition-all tracking-widest uppercase">About Us</Link>
+          
           <Link href="/contact" className="text-[11px] font-bold text-zinc-400 hover:text-white transition-all tracking-widest uppercase">Contact</Link>
         </nav>
 
@@ -218,6 +220,10 @@ export default function Navbar() {
           <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} className="absolute top-28 left-4 right-4 bg-black/95 backdrop-blur-3xl border border-white/10 p-10 rounded-[40px] lg:hidden z-[90] flex flex-col gap-8 shadow-2xl">
             <Link href="/#home" onClick={() => setIsOpen(false)} className="text-4xl font-black text-white uppercase tracking-tighter">Home</Link>
             <Link href="/services/ai-ml" onClick={() => setIsOpen(false)} className="text-4xl font-black text-white uppercase tracking-tighter">AI Services</Link>
+            
+            {/* Added About Us link for Mobile Menu */}
+            <Link href="/about" onClick={() => setIsOpen(false)} className="text-4xl font-black text-white uppercase tracking-tighter">About Us</Link>
+            
             <Link href="/contact" onClick={() => setIsOpen(false)} className="text-4xl font-black text-[#6366F1] uppercase tracking-tighter">Contact</Link>
           </motion.div>
         )}
