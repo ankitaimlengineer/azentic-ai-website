@@ -2,30 +2,30 @@
 import React from "react";
 import { Check, Sparkles, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import Link from "next/link"; // Next.js Link ઈમ્પોર્ટ કર્યું
+import Link from "next/link";
 
 const plans = [
   { 
-    name: "Starter", 
-    price: "$0", 
-    desc: "For individual developers & neural research.", 
-    features: ["1,000 API Credits", "Community Support", "Basic Neural Models", "Public Access"],
-    buttonText: "Get Started",
+    name: "Startup Pilot", 
+    price: "POC", 
+    desc: "Perfect for validating AI use-cases within your startup workflow.", 
+    features: ["Custom Strategy Audit", "Initial Agent Design", "MVP Development", "2-Week Integration"],
+    buttonText: "Start My Pilot",
     highlight: false
   },
   { 
-    name: "Professional", 
-    price: "$149", 
-    desc: "For scaling startups & specialized AI teams.", 
-    features: ["Unlimited Credits", "Priority Support", "Custom Fine-tuning", "Advanced Analytics", "Private Dedicated Nodes"], 
+    name: "Business Growth", 
+    price: "Scale", 
+    desc: "For companies ready to fully automate their business operations.", 
+    features: ["Full Workflow Automation", "Unlimited Credits", "Dedicated AI Support", "Custom API Integration", "Performance Analytics"], 
     highlight: true,
-    buttonText: "Get Started"
+    buttonText: "Request a Quote"
   },
   { 
     name: "Enterprise", 
     price: "Custom", 
-    desc: "For global corporations & research labs.", 
-    features: ["Dedicated GPU Cluster", "24/7 Concierge", "On-premise Deployment", "Custom Ethics Layer", "SLA Guarantee"],
+    desc: "Bespoke AI architectures for large-scale global enterprises.", 
+    features: ["Dedicated GPU Cluster", "Private On-premise Deployment", "Unlimited Fine-tuning", "SLA & High Security", "24/7 Priority Engineer"],
     buttonText: "Contact Sales",
     highlight: false
   },
@@ -34,7 +34,6 @@ const plans = [
 export default function Pricing() {
   return (
     <section id="pricing" className="py-32 bg-[#030712] relative overflow-hidden scroll-mt-24">
-      {/* Background Cinematic Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[#6366F1]/5 blur-[150px] -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 text-center mb-24">
@@ -46,11 +45,11 @@ export default function Pricing() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#6366F1]/20 bg-[#6366F1]/5 mb-6">
             <Sparkles size={12} className="text-[#6366F1]" />
-            <span className="text-[#6366F1] font-bold text-[10px] tracking-[0.3em] uppercase">Pricing Architecture</span>
+            <span className="text-[#6366F1] font-bold text-[10px] tracking-[0.3em] uppercase">Solution Architecture</span>
           </div>
           <h2 className="text-6xl md:text-9xl font-black text-white mt-4 tracking-tighter leading-[0.9]">
-            Scale with <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/40">Confidence.</span>
+            Flexible AI <br />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/40">Partnerships.</span>
           </h2>
         </motion.div>
       </div>
@@ -70,10 +69,9 @@ export default function Pricing() {
               : "border-white/5 bg-white/[0.01]"
             } relative overflow-hidden group transition-all duration-500 flex flex-col h-full backdrop-blur-sm`}
           >
-            {/* Most Popular Badge */}
             {plan.highlight && (
-              <div className="absolute top-8 right-8 bg-[#6366F1] text-white text-[10px] font-black px-4 py-1.5 rounded-full flex items-center gap-1 shadow-2xl">
-                <Sparkles size={10} /> MOST POPULAR
+              <div className="absolute top-8 right-8 bg-[#6366F1] text-white text-[10px] font-black px-4 py-1.5 rounded-full flex items-center gap-1">
+                <Sparkles size={10} /> RECOMMENDED
               </div>
             )}
 
@@ -81,7 +79,6 @@ export default function Pricing() {
               <h4 className="text-xl font-bold text-white mb-3 tracking-tight">{plan.name}</h4>
               <div className="flex items-baseline gap-1 mb-4">
                 <span className="text-5xl font-black text-white tracking-tighter">{plan.price}</span>
-                {plan.price !== "Custom" && <span className="text-zinc-500 text-sm font-medium">/month</span>}
               </div>
               <p className="text-zinc-500 text-sm font-light leading-relaxed min-h-[40px]">{plan.desc}</p>
             </div>
@@ -99,7 +96,6 @@ export default function Pricing() {
               </ul>
             </div>
 
-            {/* FIX: હવે આ લિંક સીધી તમારા મેઈન Inquiry System (#contact) પર જશે */}
             <Link 
               href="/#contact" 
               className={`w-full py-5 rounded-[24px] font-black text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-2 transition-all duration-500 active:scale-95 overflow-hidden relative group/btn ${
@@ -108,17 +104,10 @@ export default function Pricing() {
                 : "bg-white/5 text-white border border-white/10 hover:bg-white/10"
               }`}
             >
-              {/* Shimmer effect only for highlighted button */}
-              {plan.highlight && (
-                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-black/10 to-transparent -translate-x-full group-hover/btn:animate-[shimmer_1.5s_infinite]" />
-              )}
               <span className="relative z-10 flex items-center gap-2">
                 {plan.buttonText} <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
               </span>
             </Link>
-
-            {/* Subtle Gradient Glow inside cards on hover */}
-            <div className="absolute -bottom-20 -right-20 w-48 h-48 bg-[#6366F1]/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
           </motion.div>
         ))}
       </div>

@@ -3,16 +3,15 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const stats = [
-  { label: "Training Compute", value: "10", suffix: "25 FLOPs", sub: "Petascale Power" },
-  { label: "Active Nodes", value: "2", suffix: "M+", sub: "Global Network" },
-  { label: "Accuracy Rate", value: "99.9", suffix: "%", sub: "Precision Verified" },
-  { label: "API Latency", value: "<20", suffix: "ms", sub: "Real-time Sync" },
+  { label: "Operational Cost", value: "70", suffix: "%+", sub: "Direct Savings" },
+  { label: "Workflow Speed", value: "10", suffix: "X", sub: "Faster Automation" },
+  { label: "Model Accuracy", value: "99.9", suffix: "%", sub: "Neural Precision" },
+  { label: "Service Uptime", value: "24", suffix: "/7", sub: "Autonomous Ops" },
 ];
 
 export default function Statistics() {
   return (
     <section className="py-32 bg-[#030712] relative overflow-hidden">
-      {/* Background Decor */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
       
       <div className="container mx-auto max-w-7xl px-6 relative z-10">
@@ -40,7 +39,6 @@ export default function Statistics() {
                   {stat.sub}
                 </p>
               </div>
-              {/* Animated underline */}
               <div className="mt-6 h-[1px] w-full bg-white/5 relative overflow-hidden">
                 <motion.div 
                   initial={{ x: "-100%" }}

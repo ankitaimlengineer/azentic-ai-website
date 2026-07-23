@@ -2,34 +2,36 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Zap, ShieldCheck, Cpu, Code2, ArrowUpRight, Sparkles } from "lucide-react";
+// આ લાઇન ઉમેરવાથી 'Link' વાળી એરર સોલ્વ થઈ જશે
+import Link from "next/link"; 
 
 const solutions = [
   {
     icon: <Zap className="text-blue-400" size={28} />,
-    title: "Real-time Inference",
-    description: "Ultra-low latency inference engines designed for high-throughput enterprise applications and mission-critical workflows.",
-    tag: "Deployment Core",
+    title: "Workflow Automation",
+    description: "Build autonomous agents that handle repetitive tasks, data entry, and business operations without human intervention.",
+    tag: "Efficiency Boost",
     glow: "group-hover:bg-blue-500/20"
   },
   {
     icon: <ShieldCheck className="text-emerald-400" size={28} />,
-    title: "Secure AI Guardrails",
-    description: "Advanced safety layers to prevent hallucinations and ensure ethical AI behavior across all organizational touchpoints.",
-    tag: "Safety Layer",
+    title: "Enterprise AI Security",
+    description: "Deploy private and secure AI guardrails that protect your sensitive company data while preventing AI hallucinations.",
+    tag: "Data Safety",
     glow: "group-hover:bg-emerald-500/20"
   },
   {
     icon: <Cpu className="text-purple-400" size={28} />,
-    title: "Edge Optimization",
-    description: "Deploy heavy models on edge devices with our proprietary quantization and neural pruning techniques.",
-    tag: "Hardware Sync",
+    title: "Dedicated AI Agents",
+    description: "Custom-built agents designed to integrate with your current software stack (CRM, ERP) for seamless automation.",
+    tag: "Custom Integration",
     glow: "group-hover:bg-purple-500/20"
   },
   {
     icon: <Code2 className="text-amber-400" size={28} />,
-    title: "Custom LLM Fine-tuning",
-    description: "Tailor our base models to your specific industry data, private terminology, and specialized business logic.",
-    tag: "Model Forge",
+    title: "Industry-Specific LLMs",
+    description: "We fine-tune AI models on your specific business data to provide 99.9% accurate and specialized responses.",
+    tag: "Tailored AI",
     glow: "group-hover:bg-amber-500/20"
   }
 ];
@@ -52,11 +54,11 @@ export default function AISolutions() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 mb-6">
               <Sparkles size={12} className="text-primary" />
-              <span className="text-primary font-bold text-[10px] tracking-[0.3em] uppercase">Enterprise Ready</span>
+              <span className="text-primary font-bold text-[10px] tracking-[0.3em] uppercase">Built for Scale</span>
             </div>
             <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-white leading-[0.9]">
-              Neural <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/40">Infrastructures.</span>
+              AI Solutions <br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/40">For Business.</span>
             </h2>
           </motion.div>
         </div>
@@ -64,7 +66,8 @@ export default function AISolutions() {
         {/* Solutions Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {solutions.map((item, index) => (
-            <a href="#contact" key={index} className="block group">
+            // અહીં Link નો ઉપયોગ કર્યો છે
+            <Link href="#contact" key={index} className="block group">
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -96,7 +99,7 @@ export default function AISolutions() {
                   </div>
 
                   <div className="mt-16 flex items-center gap-3 text-zinc-500 group-hover:text-white transition-all duration-300">
-                    <span className="text-[11px] font-black uppercase tracking-[0.2em]">Inquire for deployment</span>
+                    <span className="text-[11px] font-black uppercase tracking-[0.2em]">Request a Custom Build</span>
                     <div className="p-2 rounded-full bg-white/5 group-hover:bg-primary group-hover:text-black transition-all">
                       <ArrowUpRight size={16} />
                     </div>
@@ -106,7 +109,7 @@ export default function AISolutions() {
                 {/* Subtle Inner Border Shine */}
                 <div className="absolute inset-0 border-t border-white/5 pointer-events-none rounded-[56px]" />
               </motion.div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
