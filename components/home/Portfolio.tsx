@@ -7,36 +7,36 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 const projects = [
   {
-    title: "Autonomous Logistics Orchestrator",
-    slug: "logistics-ai",
-    tag: "Agentic Systems",
-    desc: "Achieved 40% reduction in supply-chain latency using multi-agent task automation for a Fortune 500 firm.",
+    title: "documents-qa-bot",
+    slug: "documents-qa-bot",
+    tag: "Enterprise RAG",
+    desc: "Enterprise-grade AI document intelligence platform powered by Retrieval-Augmented Generation (RAG), enabling contextual question answering, semantic search, and knowledge extraction from PDF documents.",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000",
     status: "Active"
   },
   {
-    title: "Neural Financial Analyst",
-    slug: "fintech-ai",
-    tag: "Predictive Neural Nets",
-    desc: "Real-time market sentiment analysis and risk mitigation engine with 99.8% precision rate.",
+    title: "multi-agent-code-review",
+    slug: "multi-agent-code-review",
+    tag: "Agentic AI",
+    desc: "Autonomous multi-agent code review system where specialized AI agents collaborate to detect issues, improve code quality, optimize performance, and generate intelligent review reports.",
     image: "https://images.unsplash.com/photo-1560732488-6b0df240254a?q=80&w=1000",
     status: "Active"
   },
   {
-    title: "Enterprise Knowledge Graph",
-    slug: "knowledge-rag",
-    tag: "Advanced RAG",
-    desc: "Unified AI copilot for global legal teams, processing 1M+ documents with secure enterprise guardrails.",
+    title: "AI-Resume-Analyzer",
+    slug: "ai-resume-analyzer",
+    tag: "LLM Application",
+    desc: "AI-powered resume intelligence platform that evaluates ATS compatibility, analyzes professional profiles, identifies skill gaps, and delivers personalized career recommendations.",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000",
     status: "Active"
   },
   {
-    title: "Healthcare Diagnostic Agent",
-    slug: "health-ai",
-    tag: "Medical Vision",
-    desc: "Pipeline solution for autonomous medical report analysis and patient workflow optimization.",
+    title: "school-admission-rag",
+    slug: "school-admission-rag",
+    tag: "Conversational AI",
+    desc: "Intelligent admission assistant built with RAG architecture, enabling accurate, context-aware responses to school admission queries using enterprise knowledge retrieval and AI reasoning.",
     image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1000",
-    status: "Pipeline"
+    status: "Active"
   }
 ];
 
